@@ -33,5 +33,4 @@ public class ComputerGameParameters {
         if (this.getGenre() != param_to_match.getGenre()){return false;}
         return this.getPlatform() == param_to_match.getPlatform();
     }
-
 }

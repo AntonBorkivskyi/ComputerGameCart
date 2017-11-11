@@ -22,4 +22,5 @@ public class ComputerGame {
     public String getName() { return name; }
 
     public ComputerGameParameters getParameters() { return parameters; }
+
 }

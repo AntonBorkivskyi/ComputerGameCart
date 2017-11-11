@@ -37,5 +37,4 @@ public class CartTest {
         assertEquals(Genres.ACTION, parameters.getGenre());
         assertEquals(Platforms.IOS, parameters.getPlatform());
     }
-
 }
