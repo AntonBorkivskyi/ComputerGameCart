@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart {
+public class ComputerStore {
     private List<ComputerGame> games;
 
-    public Cart(){
+    public ComputerStore(){
         games = new ArrayList();
     }
 
