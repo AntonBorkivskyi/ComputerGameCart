@@ -22,6 +22,7 @@ public class CartTest {
         cart.addGame("N4", 400, 4, new ComputerGameParameters(18, "D1", Genres.ACTION, Platforms.IOS));
         assertEquals(2, cart.search(new ComputerGameParameters(18, "D1", Genres.ACTION, Platforms.IOS)).size());
         assertEquals(0, cart.search(new ComputerGameParameters(15, "D3", Genres.MOBA, Platforms.WINDOWS)).size());
+        assertEquals(4, cart.getGames().size());
     }
 
     @Test
@@ -38,4 +39,22 @@ public class CartTest {
         assertEquals(Platforms.IOS, parameters.getPlatform());
     }
 
+    @Test
+    public void genplat() throws Exception{
+        assertEquals("Action", Genres.ACTION.toString());
+        assertEquals("Moba", Genres.MOBA.toString());
+        assertEquals("Simulation", Genres.SIMULATION.toString());
+        assertEquals("Windows", Platforms.WINDOWS.toString());
+        assertEquals("iOS", Platforms.IOS.toString());
+        assertEquals("Linux", Platforms.LINUX.toString());
+    }
+
+    @Test
+    public void matches() throws Exception{
+        ComputerGameParameters first_parameters = new ComputerGameParameters(18, "D1", Genres.ACTION, Platforms.IOS);
+        ComputerGameParameters second_parameters = new ComputerGameParameters(18, "D1", Genres.ACTION, Platforms.IOS);
+        ComputerGameParameters third_parameters = new ComputerGameParameters(17, "D2", Genres.MOBA, Platforms.LINUX);
+        assertEquals(true, first_parameters.matches(second_parameters));
+        assertEquals(false, first_parameters.matches(third_parameters));
+    }
 }
