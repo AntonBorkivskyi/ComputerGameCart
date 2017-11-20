@@ -15,7 +15,6 @@ public class CartTest {
         BonusDecorator bd = new BonusDecorator(cart);
         DiscountDecorator dd = new DiscountDecorator(cart);
         assertEquals(true, bd.ship());
-        System.out.println(dd.computeTotalPrice());
         assertEquals(960, dd.computeTotalPrice(), 0.01);
 
         cart.paymentStrategy = new CashPayment();

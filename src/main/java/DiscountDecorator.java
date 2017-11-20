@@ -6,6 +6,6 @@ public class DiscountDecorator extends CartDecorator{
 
     @Override
     public double computeTotalPrice() {
-        return cart.computeTotalPrice() * 0.8;
+        return super.computeTotalPrice() * 0.8;
     }
 }
