@@ -63,4 +63,12 @@ import static org.junit.Assert.*;
         assertEquals(false, first_parameters.matches(fifth_parameters));
         assertEquals(false, first_parameters.matches(sixth_parameters));
     }
+        
+    @Test
+    public void enums() throws Exception{
+        assertEquals("Action", Genres.valueOf("ACTION").toString());
+        assertEquals("iOS", Platforms.valueOf("IOS").toString());
+        assertEquals(3, Genres.values().length);
+        assertEquals(3, Platforms.values().length);
+    }
 }
