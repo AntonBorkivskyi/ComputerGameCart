@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart {
+public class Cart extends Observable{
     List<ComputerGame> games = new ArrayList<ComputerGame>();
     PaymentStrategy paymentStrategy;
     DeliveryStrategy deliveryStrategy;
@@ -30,4 +30,5 @@ public class Cart {
     public List getGames(){
         return this.games;
     }
+
 }
