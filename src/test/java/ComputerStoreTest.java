@@ -53,8 +53,14 @@ import static org.junit.Assert.*;
     public void matches() throws Exception{
         ComputerGameParameters first_parameters = new ComputerGameParameters(18, "D1", Genres.ACTION, Platforms.IOS);
         ComputerGameParameters second_parameters = new ComputerGameParameters(18, "D1", Genres.ACTION, Platforms.IOS);
-        ComputerGameParameters third_parameters = new ComputerGameParameters(17, "D2", Genres.MOBA, Platforms.LINUX);
+        ComputerGameParameters third_parameters = new ComputerGameParameters(17, "D1", Genres.MOBA, Platforms.LINUX);
+        ComputerGameParameters fourth_parameters = new ComputerGameParameters(18, "D2", Genres.SIMULATION, Platforms.WINDOWS);
+        ComputerGameParameters fifth_parameters = new ComputerGameParameters(18, "D1", Genres.SIMULATION, Platforms.LINUX);
+        ComputerGameParameters sixth_parameters = new ComputerGameParameters(18, "D1", Genres.ACTION, Platforms.LINUX);
         assertEquals(true, first_parameters.matches(second_parameters));
         assertEquals(false, first_parameters.matches(third_parameters));
+        assertEquals(false, first_parameters.matches(fourth_parameters));
+        assertEquals(false, first_parameters.matches(fifth_parameters));
+        assertEquals(false, first_parameters.matches(sixth_parameters));
     }
 }
